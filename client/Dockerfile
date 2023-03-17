@@ -5,10 +5,13 @@ FROM node:lts
 WORKDIR /app
 
 # Copy the package.json
-COPY ./package.json /app/package.json
+COPY package.json .
 
 # install project dependencies
-RUN npm install
+RUN yarn install
+
+# Copy the package.json
+COPY . .
 
 # Expose a port
 EXPOSE 3000
