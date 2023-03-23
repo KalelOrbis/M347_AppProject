@@ -1,8 +1,17 @@
 version: '3.4'
 services:
-  blog-client:
+  chat-server:
+    build: ./server
+    container_name:  chat-server
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./server:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  chat-client:
     build: ./client
-    container_name:  blog-client
+    container_name:  chat-client
     ports:
       - "3000:3000"
     volumes:

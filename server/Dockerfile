@@ -2,7 +2,7 @@
 FROM node:lts
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /server
 
 # Copy the package.json
 COPY package.json .
@@ -14,7 +14,7 @@ RUN yarn install
 COPY . .
 
 # Expose a port
-EXPOSE 3000
+EXPOSE 3001
 
 # Executables
-CMD [ "yarn", "dev" ]
+CMD [ "yarn", "start" ]
