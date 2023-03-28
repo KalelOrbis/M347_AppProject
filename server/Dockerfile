@@ -13,7 +13,7 @@ RUN yarn install
 # Copy the package.json
 COPY . .
 
-# Expose a port
+# Expose container to a port
 EXPOSE 3001
 
 # Executables
